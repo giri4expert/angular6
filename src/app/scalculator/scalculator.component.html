@@ -1,0 +1,21 @@
+<div>
+  <form action="javascript:void;">
+    <div *ngIf="operator=='' && result == 0 ">
+            <input type="text" (input)="value1=$event.target.value">
+           
+    </div>
+    <div *ngIf="operator!='' && result == 0">
+      <input type="text" (input)="value2=$event.target.value">
+      
+  </div>
+  <div *ngIf="operator!='' && result != 0">
+      <input type="text" value="{{result}}">
+      
+  </div>
+  Value1 === {{value1}}, Value2 = === {{value2}}, Result = {{result}}
+  <div>
+    <button (click)='setOperator(op)' *ngFor="let op of ['+','-','*','/']">{{op}}</button>
+    <button (click)='calculateResult()'>=</button>
+  </div>
+  </form>
+</div>
