@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Product} from './product'
 
 @Component({
   selector: 'app-product-entry',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductEntryComponent implements OnInit {
 
+  productArray:Product = <any> <Product[]> []
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  saveProduct(pid, pname){
+    
+    let product = new Product(pid, pname)
+    console.log(product)
+    this.productArray.push(product)
   }
 
 }

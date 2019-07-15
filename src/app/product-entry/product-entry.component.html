@@ -1,3 +1,29 @@
-<p>
-  product-entry works!
-</p>
+<div class="container">
+  <div id="productEntryForm" class="col-sm-12 row">   
+    <div class="col-sm-6 col">
+      <label for="pid">Enter Product Id:</label>
+    </div>
+    <div class="col-sm-6 col">
+      <input type="text" name="pid" #pid>
+    </div>
+  </div>
+  <div id="productEntryForm" class="col-sm-12 row">   
+    <div class="col-sm-6 col">
+      <label for="pname">Enter Product Name:</label>
+    </div>
+    <div class="col-sm-6 col">
+      <input type="text" name="pname" #pname>
+    </div>
+  </div>
+  <div id="saveProduct" class="col-sm-12 row">
+    <div class="col" style="text-align: center;">
+    <button class="btn-primary" (click)="saveProduct(pid.value, pname.value)">Save Product</button>
+  </div>
+  </div>
+  <div id="ProductListing" class="col-sm-12 row">
+    <div class="col-sm-12" *ngFor="let product of productArray">
+      id: {{product.pid}} <br />
+      name : {{product.pname}}
+    </div>
+  </div>
+</div>
