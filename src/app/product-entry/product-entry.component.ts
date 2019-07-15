@@ -8,7 +8,7 @@ import {Product} from './product'
 })
 export class ProductEntryComponent implements OnInit {
 
-  productArray:Product = <any> <Product[]> []
+  productArray:Product[] = <any> <Product[]> []
 
   constructor() { }
 
