@@ -1,7 +1,7 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="position:absolute; text-align:center; top: 30%;left: 30%; width: 40%; height: 40%; background-color: blanchedalmond">
-  <app-scalculator></app-scalculator>
-</div>
 
+<select (change)="changeMonth($event)" name="month" id="month">
+  <option *ngFor="let month of monthsArray" value="{{month}}">{{month}}</option>
+</select>
 
+<app-product-entry></app-product-entry>
 <router-outlet></router-outlet>

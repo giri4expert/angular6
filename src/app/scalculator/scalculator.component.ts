@@ -10,7 +10,7 @@ export class SCalculatorComponent implements OnInit {
   value1:number 
   value2:number 
   operator =''
-  result:number = 0
+  result = 0
 
   constructor() { 
     //this.value1 = 50
@@ -23,7 +23,7 @@ export class SCalculatorComponent implements OnInit {
 
   calculateResult(){
     if(this.operator == '+'){
-      this.result = parseInt(this.value1) + parseInt(this.value2)
+      //this.result = parseInt(this.value1) + parseInt(this.value2)
     }
   }
 
