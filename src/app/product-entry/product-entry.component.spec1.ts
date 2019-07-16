@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProductEntryComponent } from './product-entry.component';
-
+/*
 describe('ProductEntryComponent', () => {
   let component: ProductEntryComponent;
   let fixture: ComponentFixture<ProductEntryComponent>;
@@ -23,3 +23,5 @@ describe('ProductEntryComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+*/
