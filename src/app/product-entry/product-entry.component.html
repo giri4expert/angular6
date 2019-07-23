@@ -1,39 +1,11 @@
-<ng-template #templateTitle let-text="title">
-  <h4 class="p-2 bg-success text-white"> {{text}}</h4>
-  <fa name="car" animation="spin" style="font-size: 3em"></fa>
-</ng-template>
-
-
-<ng-template [ngTemplateOutlet]="templateTitle" 
-[ngTemplateOutletContext]="{'title':'header'}"></ng-template>
-<div class="container">
-  <div id="productEntryForm" class="col-sm-12 row">   
-    <div class="col-sm-6 col">
-      <label for="pid">Enter Product Id:</label>
-    </div>
-    <div class="col-sm-6 col">
-      <input type="text" name="pid" #pid>
-    </div>
-  </div>
-  <div id="productEntryForm" class="col-sm-12 row">   
-    <div class="col-sm-6 col">
-      <label for="pname">Enter Product Name:</label>
-    </div>
-    <div class="col-sm-6 col">
-      <input type="text" name="pname" #pname>
-    </div>
-  </div>
-  <div id="saveProduct" class="col-sm-12 row">
-    <div class="col" style="text-align: center;">
-    <button class="btn-primary" (click)="saveProduct(pid.value, pname.value)">Save Product</button>
-  </div>
-  </div>
-  <div id="ProductListing" class="col-sm-12 row">
-    <div class="col-sm-12" *ngFor="let product of productArray">
-      id: {{product.pid}} <br />
-      name : {{product.pname}}
-    </div>
-  </div>
+<div [ngSwitch]="done">
+  <div *ngSwitchCase="true">Matched True and YES</div>
+  <div *ngSwitchDefault>Default if done is FALSE</div>
 </div>
-<ng-template [ngTemplateOutlet]="templateTitle"
-[ngTemplateOutletContext]="{'title':'footer'}"></ng-template>
+
+<select name='as1' (click)="as1=$event.target.value; ">
+  <option value="green">Green</option>
+  <option value="blue">Blue</option>
+</select>
+
+<h1 [ngClass]="{'is-greenBold':true, 'is-blueBold':false}" [innerText]="text"></h1>

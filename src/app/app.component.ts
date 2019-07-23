@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {environment} from '../environments/environment'
+
 
 @Component({
   selector: 'app-root',
@@ -11,6 +13,8 @@ export class AppComponent {
 
   title = 'Expertzlab Technologies Pvt. Ltd.';
 
+  appTitle = environment.appTitle;
+  
   changeMonth(e){
     console.log(e.target.value)
   }

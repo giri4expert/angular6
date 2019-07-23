@@ -10,6 +10,16 @@ export class ProductEntryComponent implements OnInit {
 
   productArray:Product[] = <any> <Product[]> []
 
+  disabled= true
+  blueBoldDisabled = 'blueBoldDisabled'
+  done = false
+  text = "Welcome to Expertzlab!"
+  myColor = 'red'
+  myFont = 'bold'
+  obj = {}
+  as1 = ''
+
+  //myStyle = {'color': this.myColor, 'font-weight': this.myFont}
   constructor() { }
 
   ngOnInit() {
