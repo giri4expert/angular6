@@ -1,27 +1,56 @@
 
-<select (change)="changeMonth($event)" name="month" id="month">
-  <option *ngFor="let month of monthsArray" value="{{month}}">{{month}}</option>
-</select>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" (click)="isCollapsed = !isCollapsed" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Brand</a>
+      </div>
+      <div class="collapse navbar-collapse" [collapse]="isCollapsed">
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a [routerLink]="['/product-display']">Prdouct Display</a>
+          </li>
+          <li>
+            <a [routerLink]="['/inventory']">Inventory</a>
+          </li>
 
-<div class="btn-group" dropdown>
-  <button dropdownToggle type="button" class="btn btn-primary dropdown-toggle">
-    Button dropdown <span class="caret"></span>  </button>
-  <ul *dropdownMenu class="dropdown-menu" role="menu">
-    <li role="menuitem"><a class="dropdown-item" href="#">Action</a></li>
-    <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
-     <li class="divider dropdown-divider"></li>
-    <li rote="menuitem" class="dropdown-item" aria-current="page" routerLink='/'>Home</li>
-    <li role="menuitem" class="dropdown-item"  routerLink='/login'>Login</li>
-    </ul></div>
-    
-Title: {{appTitle}}
-<app-product-entry></app-product-entry>
-<router-outlet></router-outlet>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
 <!--
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">GFL CRM</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" [routerLink]="['/product-display']" routerLinkActive="router-link-active" ]>Product Display <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/inventory']" routerLinkActive="router-link-active" >Inventory</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+-->
 <div>
-  <button (click) = "animate()">Click Me</button>
-  <div [@myanimation] = "state" class = "rotate">
-     <img src = "assets/images/happy.png" width = "100" height = "100">
+  <div class="cols-md-4">
+    Side Bar
+  </div>
+  <div class="cols-md-8">
+      <div class="container-fluid">
+          <router-outlet></router-outlet>
+      </div>
   </div>
 </div>
--->

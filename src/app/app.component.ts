@@ -40,6 +40,8 @@ export class AppComponent {
 
   state: string = "smaller";
   
+  isCollapsed = true;
+  
    animate() {
       this.state= this.state == 'larger' ? 'smaller' : 'larger';
    }

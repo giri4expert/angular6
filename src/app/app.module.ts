@@ -4,16 +4,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductEntryComponent } from './product-entry/product-entry.component';
 import {AngularFontAwesomeModule} from 'angular-font-awesome';
-import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { BsDropdownModule, BsDropdownMenuDirective } from 'ngx-bootstrap/dropdown';
 import { SCalculatorComponent } from './scalculator/scalculator.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule} from '@angular/common/http'
-
+import { HttpClientModule} from '@angular/common/http';
+import { InventoryComponent } from './inventory/inventory.component';
+import { ProductDisplayComponent } from './product-display/product-display.component'
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 @NgModule({
   declarations: [
     AppComponent,
     ProductEntryComponent,
-    SCalculatorComponent
+    SCalculatorComponent,
+    InventoryComponent,
+    ProductDisplayComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +25,9 @@ import { HttpClientModule} from '@angular/common/http'
     AngularFontAwesomeModule,
     BsDropdownModule.forRoot(),
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    CollapseModule.forRoot()
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
