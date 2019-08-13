@@ -9,3 +9,14 @@
 </select>
 
 <h1 [ngClass]="{'is-greenBold':true, 'is-blueBold':false}" [innerText]="text"></h1>
+<div id="error" *ngFor="let e of error_messages">
+ Error: {{e}}
+</div>
+{{error_message[0]}}
+
+<ul>
+  <li *ngFor="let pitem of _productList">
+    Name = {{pitem.name}},
+    Id = {{pitem.id}}
+  </li>
+</ul>
