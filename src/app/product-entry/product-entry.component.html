@@ -1,18 +1,28 @@
-<div [ngSwitch]="done">
-  <div *ngSwitchCase="true">Matched True and YES</div>
-  <div *ngSwitchDefault>Default if done is FALSE</div>
-</div>
 
-<select name='as1' (click)="as1=$event.target.value; ">
-  <option value="green">Green</option>
-  <option value="blue">Blue</option>
-</select>
+<form [formGroup]="prdForm" action="javascript:void">
+  <div class="panel panel-primary">
+    <div class="panel-heading"> Product Info:</div>
+  <div class="form-group row">
+    <label class="col-sm-3" for="prodId">ProductID:</label>
+    <input class="form-control col-sm-6" type="text" name="ProdId" formControlName="prdId" id="prodId">
+  </div>
+  <div class="form-group row">
+      <label class="col-sm-3" for="prodName">Product Name:</label>
+      <input class="form-control col-sm-6" type="text" name="prodName" formControlName="prdName" id="prodName">
+    </div>
+    <header>Add Sku</header>
+    <div class="form-group row">
+        <label class="col-sm-3" for="skuId">SKu Id:</label>
+        <input class="form-control col-sm-6" type="text" name="skuid" formControlName="skuId" id="skuId" >
+      </div>
+      <div class="form-group row">
+          <label class="col-sm-3" for="skuName">Sku Name:</label>
+          <input class="form-control col-sm-6" type="text" name="skuName" formControlName="skuName" id="skuName">
+        </div>
 
-<h1 [ngClass]="{'is-greenBold':true, 'is-blueBold':false}" [innerText]="text"></h1>
-<div id="error" *ngFor="let e of error_messages">
- Error: {{e}}
-</div>
-{{error_message[0]}}
+      <button (click)="saveProduct()"> submit:</button>  
+    </div>
+</form>
 
 <ul>
   <li *ngFor="let pitem of _productList">

@@ -11,13 +11,16 @@ import { HttpClientModule} from '@angular/common/http';
 import { InventoryComponent } from './inventory/inventory.component';
 import { ProductDisplayComponent } from './product-display/product-display.component'
 import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 @NgModule({
   declarations: [
     AppComponent,
     ProductEntryComponent,
     SCalculatorComponent,
     InventoryComponent,
-    ProductDisplayComponent
+    ProductDisplayComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,8 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
     BsDropdownModule.forRoot(),
     BrowserAnimationsModule,
     HttpClientModule,
-    CollapseModule.forRoot()
+    CollapseModule.forRoot(), FormsModule, 
+    ReactiveFormsModule
     
   ],
   providers: [],

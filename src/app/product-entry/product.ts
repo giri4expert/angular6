@@ -1,9 +1,12 @@
+import { Sku } from '../sku';
 
 export class Product{
     pid
     pname
-    constructor(pid:string, name:string){
-        this.pid = pid
-        this.pname = name
+    skuList: Sku[]
+    csku
+    constructor(){
+        this.csku = new Sku()
     }
+    
 }

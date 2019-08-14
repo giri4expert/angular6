@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from './product'
 import { ProductService } from '../product.service';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-product-entry',
@@ -9,47 +10,27 @@ import { ProductService } from '../product.service';
 })
 export class ProductEntryComponent implements OnInit {
 
-  productArray:Product[] = <any> <Product[]> []
-
-  disabled= true
-  blueBoldDisabled = 'blueBoldDisabled'
-  done = false
-  text = 'Welcome to Expertzlab!'
-  myColor = 'red'
-  myFont = 'bold'
-  obj = {}
-  as1 = ''
+  product: Product
   _prodService: ProductService
-  _productList
-  error_messages = []
+
+  prdForm: FormGroup
 
   constructor(prodService:ProductService) { 
     this._prodService = prodService
+    this.product = new Product()
   }
 
   ngOnInit() {
-    this._prodService.getProductList()
-      .subscribe(
-        res => {
-          this._productList = res
-        },
-        err => {
-          this.error_messages.push(err)
-          this.error_messages.push('server Error: plz retry again')
-        },
-        () => {
-          console.log('stream completed')
-        }
-
-      )
-        
+      this.prdForm = new FormGroup({
+        prdId: new FormControl(),
+        prdName: new FormControl(),
+        skuId : new FormControl(),
+        skuName: new FormControl()
+      })
   }
 
-  saveProduct(pid, pname){
-    
-    const product = new Product(pid, pname)
-    console.log(product)
-    this.productArray.push(product)
+  saveProduct(){
+    console.log(this.prdForm.value)
   }
 
 }
