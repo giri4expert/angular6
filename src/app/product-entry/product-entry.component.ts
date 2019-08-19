@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from './product'
 import { ProductService } from '../product.service';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'app-product-entry',
@@ -17,20 +17,47 @@ export class ProductEntryComponent implements OnInit {
 
   constructor(prodService:ProductService) { 
     this._prodService = prodService
-    this.product = new Product()
   }
 
   ngOnInit() {
       this.prdForm = new FormGroup({
-        prdId: new FormControl(),
+        prdId : new FormControl('',Validators.compose([Validators.required, Validators.minLength(5)])),
         prdName: new FormControl(),
+        skills: new FormGroup({
         skuId : new FormControl(),
         skuName: new FormControl()
+        })
       })
+      /*
+      this.prdForm.patchValue({
+        prdId: '12',
+        prdName: 'Book Omega',
+        skuId: '001',
+        skuName : 'Register 11'
+      })
+      */
   }
 
   saveProduct(){
-    console.log(this.prdForm.value)
+    console.log('valid:'+this.prdForm.valid)
+    this.product = new Product(this.prdForm.value)
+    console.log(this.product)
+    console.log('prdForm:', this.prdForm)
   }
 
+  logKeyValues(){
+    this.loopCtrls(this.prdForm)
+  }
+
+  loopCtrls(grp: FormGroup){
+    Object.keys(grp.controls).forEach((x) => {
+      const actrl  = grp.get(x)
+      if(actrl instanceof FormControl){
+        console.log('key:',x,' value:', actrl.value)
+      } else {
+        this.loopCtrls(<FormGroup>actrl)
+      }
+      
+    })
+  }
 }

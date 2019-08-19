@@ -1,3 +1,26 @@
-<p>
-  inventory works!
-</p>
+<div>
+  <form action="javascript:void">
+    <div class="form-group">
+    <label for="prodId">Product Id:</label>
+    <input class="form-control" required minlength="2" (input)="void" #productId='ngModel'
+     [(ngModel)]="prodId" id='prodId' type="text" name="prodId">
+    <div *ngIf="productId.invalid &&(productId.dirty || productId.touched)" class="alert alert-danger">
+      <div *ngIf="productId.errors.required">
+        Product Id required
+      </div>
+      <div *ngIf="productId.errors.minlength">
+        Product Id should be minimun 2 digits
+      </div>
+    </div>
+    </div>
+    <div class="form-group">
+        <label for="stock">Stock:</label>
+        <input class="form-control" required minlength="2" (input)="void"
+         #stockNum='ngModel' [(ngModel)]="stock" id='stock' type="text" name="stock">
+        Stock: {{stockNum.value}} <br>
+        Valid: {{stockNum.valid}} <br>
+        Dirty: {{stockNum.dirty}} 
+        </div>
+      <button type="submit" [disabled]="productId.invalid || stockNum.invalid">Submit</button>
+  </form>
+</div>

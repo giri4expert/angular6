@@ -4,12 +4,14 @@ import { ProductDisplayComponent } from './product-display/product-display.compo
 import { InventoryComponent } from './inventory/inventory.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductEntryComponent } from './product-entry/product-entry.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   {'path':'product-entry', 'component': ProductEntryComponent},
   {'path':'','component': ProductDisplayComponent},
   {'path':'product-display','component': ProductDisplayComponent},
   {'path':'inventory','component': InventoryComponent},
+  {path:'login',component: LoginComponent},
   {'path':'**','component':PageNotFoundComponent}
 ];
 

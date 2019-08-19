@@ -8,9 +8,10 @@
   </div>
   <div class="form-group row">
       <label class="col-sm-3" for="prodName">Product Name:</label>
-      <input class="form-control col-sm-6" type="text" name="prodName" formControlName="prdName" id="prodName">
+      <input class="form-control col-sm-6" [class]="{'hass-error': true}" type="text" name="prodName" formControlName="prdName" id="prodName">
     </div>
     <header>Add Sku</header>
+    <div formGroupName="skills">
     <div class="form-group row">
         <label class="col-sm-3" for="skuId">SKu Id:</label>
         <input class="form-control col-sm-6" type="text" name="skuid" formControlName="skuId" id="skuId" >
@@ -19,10 +20,43 @@
           <label class="col-sm-3" for="skuName">Sku Name:</label>
           <input class="form-control col-sm-6" type="text" name="skuName" formControlName="skuName" id="skuName">
         </div>
+      </div>
 
       <button (click)="saveProduct()"> submit:</button>  
+      <button (click)="logKeyValues()"> Log Key Values:</button>  
     </div>
 </form>
+
+<table border="1">
+  <tr>
+    <td>
+      Product id
+    </td>
+    <td>
+      Productid dirty
+    </td>
+    <td>
+        Productid Valid
+      </td>
+    <td>
+      Product Name
+    </td>
+  </tr>
+  <tr>
+    <td>
+        {{prdForm.get('prdId').value}}
+    </td>
+    <td>
+        {{prdForm.dirty}}
+    </td>
+    <td>
+        {{prdForm.valid}}
+    </td>
+    <td>
+        {{prdForm.get('prdName').value}}
+    </td>
+  </tr>
+</table>
 
 <ul>
   <li *ngFor="let pitem of _productList">

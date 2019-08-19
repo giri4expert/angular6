@@ -12,7 +12,8 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { ProductDisplayComponent } from './product-display/product-display.component'
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms'
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { LoginComponent } from './login/login.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +21,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms'
     SCalculatorComponent,
     InventoryComponent,
     ProductDisplayComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
