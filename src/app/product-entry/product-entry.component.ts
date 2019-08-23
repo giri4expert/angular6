@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Product} from './product'
 import { ProductService } from '../product.service';
-import { FormGroup, FormControl, Validators, AbstractControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators, AbstractControl, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-product-entry',
@@ -15,17 +15,17 @@ export class ProductEntryComponent implements OnInit {
 
   prdForm: FormGroup
 
-  constructor(prodService:ProductService) { 
+  constructor(private fb: FormBuilder, prodService:ProductService) { 
     this._prodService = prodService
   }
 
   ngOnInit() {
-      this.prdForm = new FormGroup({
-        prdId : new FormControl('',Validators.compose([Validators.required, Validators.minLength(5)])),
-        prdName: new FormControl(),
-        skills: new FormGroup({
-        skuId : new FormControl(),
-        skuName: new FormControl()
+      this.prdForm = this.fb.group({
+        prdId : ['test',Validators.compose([Validators.required, Validators.minLength(5)])],
+        prdName: ['test'],
+        skills: this.fb.group({
+        skuId : ['test'],
+        skuName: ['test']
         })
       })
       /*

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-inventory',
@@ -17,5 +18,14 @@ export class InventoryComponent implements OnInit {
 
   pValue(obj){
     console.log(obj)
+  }
+
+  saveForm(product){
+    console.log('product:template:',product)
+    Object.keys(product.controls).forEach((e)=>{
+      console.log('ctrl', product.controls[e])
+      product.controls[e].disable()
+      
+    })
   }
 }

@@ -5,22 +5,33 @@
   <div class="form-group row">
     <label class="col-sm-3" for="prodId">ProductID:</label>
     <input class="form-control col-sm-6" type="text" name="ProdId" formControlName="prdId" id="prodId">
+    <div *ngIf="prdForm.invalid">
+    <div *ngIf="prdForm.controls.prdId.errors.required" class="alert alert-danger" >
+      Product Id required
+    </div>
+    <div *ngIf="prdForm.controls.prdId.errors.minlength" class="alert alert-danger" >
+      Product Id min value 5 digits
+    </div>
+  </div>
   </div>
   <div class="form-group row">
       <label class="col-sm-3" for="prodName">Product Name:</label>
-      <input class="form-control col-sm-6" [class]="{'hass-error': true}" type="text" name="prodName" formControlName="prdName" id="prodName">
+      <input class="form-control col-sm-6" [class]="{'hass-error': true}" 
+      type="text" name="prodName" formControlName="prdName" id="prodName">
     </div>
     <header>Add Sku</header>
     <div formGroupName="skills">
-    <div class="form-group row">
+        <div class="form-group row">
         <label class="col-sm-3" for="skuId">SKu Id:</label>
-        <input class="form-control col-sm-6" type="text" name="skuid" formControlName="skuId" id="skuId" >
-      </div>
-      <div class="form-group row">
-          <label class="col-sm-3" for="skuName">Sku Name:</label>
-          <input class="form-control col-sm-6" type="text" name="skuName" formControlName="skuName" id="skuName">
+        <input class="form-control col-sm-6" type="text" name="skuid" 
+         formControlName="skuId" id="skuId" >
         </div>
-      </div>
+        <div class="form-group row">
+          <label class="col-sm-3" for="skuName">Sku Name:</label>
+          <input class="form-control col-sm-6" type="text" name="skuName" 
+           formControlName="skuName" id="skuName">
+        </div>
+    </div>
 
       <button (click)="saveProduct()"> submit:</button>  
       <button (click)="logKeyValues()"> Log Key Values:</button>  
