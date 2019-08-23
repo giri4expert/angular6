@@ -5,6 +5,7 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductEntryComponent } from './product-entry/product-entry.component';
 import { LoginComponent } from './login/login.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 
 const routes: Routes = [
   {'path':'product-entry', 'component': ProductEntryComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {'path':'product-display','component': ProductDisplayComponent},
   {'path':'inventory','component': InventoryComponent},
   {path:'login',component: LoginComponent},
+  {'path':'changepass', 'component': ChangePasswordComponent},
   {'path':'**','component':PageNotFoundComponent}
 ];
 

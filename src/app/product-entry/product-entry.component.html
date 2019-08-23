@@ -5,7 +5,7 @@
   <div class="form-group row">
     <label class="col-sm-3" for="prodId">ProductID:</label>
     <input class="form-control col-sm-6" type="text" name="ProdId" formControlName="prdId" id="prodId">
-    <div *ngIf="prdForm.invalid">
+    <div *ngIf="prdForm.controls.prdId.invalid">
     <div *ngIf="prdForm.controls.prdId.errors.required" class="alert alert-danger" >
       Product Id required
     </div>
@@ -25,6 +25,9 @@
         <label class="col-sm-3" for="skuId">SKu Id:</label>
         <input class="form-control col-sm-6" type="text" name="skuid" 
          formControlName="skuId" id="skuId" >
+         <div *ngIf="prdForm.controls.skills.controls.skuId.invalid" class="alert alert-danger">
+            Invalid entry allow only a,b and c
+         </div>
         </div>
         <div class="form-group row">
           <label class="col-sm-3" for="skuName">Sku Name:</label>

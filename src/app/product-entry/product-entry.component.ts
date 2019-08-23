@@ -24,10 +24,11 @@ export class ProductEntryComponent implements OnInit {
         prdId : ['test',Validators.compose([Validators.required, Validators.minLength(5)])],
         prdName: ['test'],
         skills: this.fb.group({
-        skuId : ['test'],
+        skuId : ['test', Validators.pattern('/\d{5}/')],
         skuName: ['test']
         })
       })
+      
       /*
       this.prdForm.patchValue({
         prdId: '12',
