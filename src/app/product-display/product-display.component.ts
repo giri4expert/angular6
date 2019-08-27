@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProductService } from '../product.service';
 
 @Component({
   selector: 'app-product-display',
@@ -8,12 +9,16 @@ import { Router } from '@angular/router';
 })
 export class ProductDisplayComponent implements OnInit {
 
+  productList
 
-  constructor(private _router:Router) {
+  constructor(private productService: ProductService, private _router:Router) {
 
    }
 
   ngOnInit() {
+    this.productList = this.productService.getProductList().subscribe((data)=>{
+      this.productList = data
+    })
   }
 
   goInventory(){
