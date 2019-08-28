@@ -3,7 +3,7 @@
     <div class="form-group">
       <label for="login">Login:</label>
       <input class="form-control" required minlength="6" type="text" name="login" 
-      #lName="ngModel" [(ngModel)]="login" (blur)="onClickSubmit(lName,passwd)">
+       (blur)="onClickSubmit(lName,passwd)">
       <div *ngIf="formErrors.login.required" class="alert alert-danger">
         {{formErrors.login.required}}
       </div>
@@ -14,7 +14,7 @@
     <div class="form-group">
         <label for="password">Password:</label>
         <input class="form-control" required minlength="6" type="text" name="password" 
-        #passwd="ngModel" [(ngModel)]="password" (blur)="onClickSubmit(lName,passwd)">
+       (blur)="onClickSubmit(lName,passwd)">
         <div *ngIf="formErrors.password.required" class="alert alert-danger">
             {{formErrors.password.required}}
           </div>

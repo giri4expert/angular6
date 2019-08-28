@@ -2,12 +2,13 @@
 <button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed"
     [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">Toggle collapse
 </button>
+<div>Today: {{nDate | date: "MMM dd yyyy HH:mm:ss"  }}</div>
 <hr>
 <div id="collapseBasic" [collapse]="isCollapsed" style="margin:0; text-align: left;">
 <div class="well well-lg card card-block card-header">
     <ul class="nav navbar-nav">
         <li>
-            <a [routerLink]="['/product-entry']">Product Entry</a>
+            <a [routerLink]="['/product-entry']">{{productentrymenu | slice:1:5 | uppercase}}</a>
           </li>  
       <li class="active">
           <a [routerLink]="['/product-display']">Prdouct Display</a>
@@ -32,6 +33,7 @@
   </div>
   <div class="col-sm-9">
           <router-outlet></router-outlet>
+          Current Price {{cPrice | percent:'3.2-3'}}
   </div>
 </div>
 </div>

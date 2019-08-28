@@ -49,4 +49,13 @@ formErrors = { login:{required:undefined, minlength:undefined},
     }
   }
 
+  checkLogin(userName, password){
+    const uname = 'admin'
+    const passpwd = 'admin'
+    if(userName === uname && password === passpwd){
+      return true;
+    } else { return false;}
+   
+  }
+
 }

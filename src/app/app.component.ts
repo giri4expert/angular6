@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {environment} from '../environments/environment'
 import { trigger, state, style, transition, animate } from '@angular/animations';
 
@@ -30,7 +30,7 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
       ])
    ]
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   monthsArray = ['Jan', 'Feb', 'Mar', 'Apr' ]
 
@@ -38,13 +38,18 @@ export class AppComponent {
 
   appTitle = environment.appTitle;
 
-  state: string = "smaller";
+  productentrymenu = 'Product Entry';
   
   isCollapsed = true;
-  
-   animate() {
-      this.state= this.state == 'larger' ? 'smaller' : 'larger';
-   }
+
+  cPrice = .3
+  nDate = new Date();
+
+  ngOnInit(){
+     setInterval(()=>{
+      this.nDate = new Date()
+     },1000)
+  }
 
   changeMonth(e){
     console.log(e.target.value)
