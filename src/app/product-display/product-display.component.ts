@@ -24,4 +24,8 @@ export class ProductDisplayComponent implements OnInit {
   goInventory(){
     this._router.navigate(['/inventory'])
   }
+
+  pageCount(){
+    return [1,2,3,4,5]
+  }
 }

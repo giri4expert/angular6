@@ -1,6 +1,16 @@
 <p>
   <a class="button" (click)="goInventory()">Go Inventory</a>
+
+  <button *appcounter="let page of pageCount()">
+      {{page}}
+  </button>
 </p>
+
+<div>
+    <span appChangeText>Welcome to Expertzlab</span>
+</div>
+
+
 <!--
 <ul>
   <li *ngFor="let product of productList | paginate:{ itemsPerPage:3, currentPage:p}">

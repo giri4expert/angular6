@@ -2,19 +2,25 @@
   <form action="javascript:void" (ngSubmit)="onClickSubmit(lName,passwd)">
     <div class="form-group">
       <label for="login">Login:</label>
-      <input class="form-control" required minlength="6" type="text" name="login" 
-       (blur)="onClickSubmit(lName,passwd)">
+      <input appForbiddenNameValidator="baijumon" class="form-control" #lName='ngModel' required minlength="6" type="text" name="login" 
+       (blur)="onClickSubmit(lName,passwd)" [(ngModel)]='login'>
       <div *ngIf="formErrors.login.required" class="alert alert-danger">
         {{formErrors.login.required}}
       </div>
       <div *ngIf="formErrors.login.minlength" class="alert alert-danger">
           {{formErrors.login.minlength}}
-        </div>
+      </div>
+        
+      <div *ngIf="formErrors.login.forbidden" class="alert alert-danger">
+        {{formErrors.login.forbidden}}
+      </div>
+        
     </div>
+
     <div class="form-group">
         <label for="password">Password:</label>
-        <input class="form-control" required minlength="6" type="text" name="password" 
-       (blur)="onClickSubmit(lName,passwd)">
+        <input class="form-control" #passwd='ngModel' required minlength="6" type="text" name="password" 
+       (blur)="onClickSubmit(lName,passwd)" [(ngModel)]='password'>
         <div *ngIf="formErrors.password.required" class="alert alert-danger">
             {{formErrors.password.required}}
           </div>

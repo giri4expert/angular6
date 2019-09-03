@@ -10,7 +10,8 @@ export class LoginComponent implements OnInit {
   valdnMsg = {
     'login':{
     'required':'Login name is required',
-    'minlength':'Login name should be min six characters'
+    'minlength':'Login name should be min six characters',
+    'forbidden':'This login name is not allowed'
   },
   'password':{
     'required':'Password is required',
@@ -18,8 +19,10 @@ export class LoginComponent implements OnInit {
   }
 }
 
-formErrors = { login:{required:undefined, minlength:undefined}, 
-                password:{required:undefined,minlength:undefined}
+formErrors = { login:{required:undefined, minlength:undefined,
+              forbidden:undefined
+              }, 
+                password:{required:undefined,minlength:undefined},
              }
 
   constructor() { }
@@ -28,7 +31,9 @@ formErrors = { login:{required:undefined, minlength:undefined},
   }
 
   onClickSubmit(ln, ps){
-    this.formErrors.login = {required:undefined, minlength:undefined}
+
+    console.log("Login")
+    this.formErrors.login = {required:undefined, minlength:undefined, forbidden:undefined}
     this.formErrors.password = {required:undefined, minlength:undefined}
     if(ln.invalid && (ln.dirty || ln.touched)){
       if(ln.errors.required ){
@@ -37,8 +42,10 @@ formErrors = { login:{required:undefined, minlength:undefined},
       if(ln.errors.minlength ){
         this.formErrors.login.minlength = this.valdnMsg.login.minlength
       }
+      if(ln.errors.forbiddenName){
+        this.formErrors.login.forbidden = this.valdnMsg.login.forbidden
+      }
     }
-
     if(ps.invalid && (ps.dirty || ps.touched)) {
       if(ps.errors.required){
         this.formErrors.password.required = this.valdnMsg.password.required
@@ -47,6 +54,7 @@ formErrors = { login:{required:undefined, minlength:undefined},
         this.formErrors.password.minlength = this.valdnMsg.password.minlength
       }
     }
+
   }
 
   checkLogin(userName, password){

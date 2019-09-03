@@ -12,10 +12,13 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { ProductDisplayComponent } from './product-display/product-display.component'
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule, NG_VALIDATORS} from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { ChangePasswordComponent } from './change-password/change-password.component'
-import {NgxPaginationModule} from 'ngx-pagination'
+import {NgxPaginationModule} from 'ngx-pagination';
+import { CounterDirective } from './counter.directive';
+import { ChangeTextDirective } from './change-text.directive';
+import { ForbiddenNameValidatorDirective } from './forbidden-name-validator.directive'
 
 @NgModule({
   declarations: [
@@ -26,7 +29,9 @@ import {NgxPaginationModule} from 'ngx-pagination'
     ProductDisplayComponent,
     PageNotFoundComponent,
     LoginComponent,
-    ChangePasswordComponent
+    ChangePasswordComponent,
+    CounterDirective,
+    ChangeTextDirective,ForbiddenNameValidatorDirective
   ],
   imports: [
     BrowserModule,
@@ -39,7 +44,7 @@ import {NgxPaginationModule} from 'ngx-pagination'
     ReactiveFormsModule, NgxPaginationModule
     
   ],
-  providers: [],
+  providers:[ForbiddenNameValidatorDirective],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
