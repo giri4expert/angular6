@@ -8,8 +8,10 @@
 
 <div>
     <span appChangeText>Welcome to Expertzlab</span>
+    To days rate = {{ 20 | multiplier: 2 }}
 </div>
 
+<app-child [pProductCount]="productCount" (produce)="onEvent()" ></app-child>
 
 <!--
 <ul>

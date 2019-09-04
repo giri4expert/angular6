@@ -18,7 +18,9 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import {NgxPaginationModule} from 'ngx-pagination';
 import { CounterDirective } from './counter.directive';
 import { ChangeTextDirective } from './change-text.directive';
-import { ForbiddenNameValidatorDirective } from './forbidden-name-validator.directive'
+import { ForbiddenNameValidatorDirective } from './forbidden-name-validator.directive';
+import { MultiplierPipe } from './multiplier.pipe';
+import { ChildComponent } from './child/child.component'
 
 @NgModule({
   declarations: [
@@ -31,7 +33,7 @@ import { ForbiddenNameValidatorDirective } from './forbidden-name-validator.dire
     LoginComponent,
     ChangePasswordComponent,
     CounterDirective,
-    ChangeTextDirective,ForbiddenNameValidatorDirective
+    ChangeTextDirective,ForbiddenNameValidatorDirective, MultiplierPipe, ChildComponent
   ],
   imports: [
     BrowserModule,

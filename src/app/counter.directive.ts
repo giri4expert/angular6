@@ -12,7 +12,7 @@ export class CounterDirective {
     private template: TemplateRef<Object>) { }
 
   ngOnChanges(changes: SimpleChanges){
-    console.log('change Detected', this.counter)
+    // console.log('change Detected', this.counter)
     this.container.clear()
     this.counter.forEach( e => {
       this.container.createEmbeddedView(this.template, new CounterContext(e) )
