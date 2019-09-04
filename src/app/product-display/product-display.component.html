@@ -11,9 +11,9 @@
     To days rate = {{ 20 | multiplier: 2 }}
 </div>
 
-<app-child [pProductCount]="productCount" (produce)="onEvent()" ></app-child>
+<app-child bind-pProductCount="productCount" on-produce="onEvent($event)" ></app-child>
 
-<!--
+
 <ul>
   <li *ngFor="let product of productList | paginate:{ itemsPerPage:3, currentPage:p}">
     <div style="box-shadow: 0 5px 5px 0 gray; padding:5px;margin:5px;">
@@ -24,4 +24,3 @@
 </ul>
 
 <pagination-controls (pageChange)="p=$event"></pagination-controls>
--->

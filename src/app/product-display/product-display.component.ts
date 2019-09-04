@@ -17,9 +17,11 @@ export class ProductDisplayComponent implements OnInit {
    }
 
   ngOnInit() {
-    this.productList = this.productService.getProductList().subscribe((data)=>{
-      this.productList = data
-    })
+    // this.productList = this.productService.getProductList().subscribe((data)=>{
+      this.productService.getProductList().then(res => {
+        this.productList = res
+        console.log('in component:', res)
+      })  
   }
 /*
   ngOnChanges(changes: SimpleChanges): void {
@@ -45,7 +47,8 @@ export class ProductDisplayComponent implements OnInit {
     return [1,2,3,4,5]
   }
 
-  onEvent(){
+  onEvent(e){
     console.log('received event from child')
+    console.log('event:',e)
   }
 }

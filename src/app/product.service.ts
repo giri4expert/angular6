@@ -15,7 +15,7 @@ export class ProductService {
   }
 
   getProductList(){
-    
+    /*
     return this._http.get('http://localhost:4200/assets/product.json')
     .pipe(
       tap(() => console.log('HTTP requestexecuted')),
@@ -29,6 +29,17 @@ export class ProductService {
             }
      )
     )
+    */
+
+    const promise = new Promise((resolve, reject) => {
+      this._http.get('http://localhost:4200/assets/product.json')
+                .toPromise()
+                .then( res => {
+                  console.log(res)
+                  resolve(res)
+                })
+    })
+    return promise;
   }
 
   handleError(op, result?:Observable<Object>, err?:any){
