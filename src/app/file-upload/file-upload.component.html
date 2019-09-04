@@ -1,0 +1,9 @@
+<div>
+  <form [formGroup]='uploadForm' #statusForm='ngForm' (submit)="handleSubmit(statusForm)" action="javascript:void()">
+    <div class="form-group">
+      <label for="file">Select a file to upload:</label>
+      <input class="form-control" type="file" id="file" (change)="handleFileInput($event.target.files)">
+    </div>
+    <button class="btn btn-info" type="submit">Upload File</button>
+  </form>
+</div>

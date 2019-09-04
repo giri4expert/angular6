@@ -6,6 +6,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { ProductEntryComponent } from './product-entry/product-entry.component';
 import { LoginComponent } from './login/login.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
+import { FileUploadComponent } from './file-upload/file-upload.component';
 
 const routes: Routes = [
   {'path':'product-entry', 'component': ProductEntryComponent},
@@ -14,7 +15,8 @@ const routes: Routes = [
   {'path':'inventory','component': InventoryComponent},
   {path:'login',component: LoginComponent},
   {'path':'changepass', 'component': ChangePasswordComponent},
-  {'path':'**','component':PageNotFoundComponent}
+  {path:'fileUpload', component: FileUploadComponent},
+  {'path':'**','component':PageNotFoundComponent},
 ];
 
 @NgModule({

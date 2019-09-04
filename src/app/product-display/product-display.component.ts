@@ -21,6 +21,8 @@ export class ProductDisplayComponent implements OnInit {
       this.productService.getProductList().then(res => {
         this.productList = res
         console.log('in component:', res)
+      }).catch(e => {
+        console.log('error')
       })  
   }
 /*

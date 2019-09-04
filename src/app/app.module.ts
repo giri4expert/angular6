@@ -20,7 +20,8 @@ import { CounterDirective } from './counter.directive';
 import { ChangeTextDirective } from './change-text.directive';
 import { ForbiddenNameValidatorDirective } from './forbidden-name-validator.directive';
 import { MultiplierPipe } from './multiplier.pipe';
-import { ChildComponent } from './child/child.component'
+import { ChildComponent } from './child/child.component';
+import { FileUploadComponent } from './file-upload/file-upload.component'
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { ChildComponent } from './child/child.component'
     LoginComponent,
     ChangePasswordComponent,
     CounterDirective,
-    ChangeTextDirective,ForbiddenNameValidatorDirective, MultiplierPipe, ChildComponent
+    ChangeTextDirective,ForbiddenNameValidatorDirective, MultiplierPipe, ChildComponent, FileUploadComponent
   ],
   imports: [
     BrowserModule,
