@@ -22,6 +22,13 @@ import { ForbiddenNameValidatorDirective } from './forbidden-name-validator.dire
 import { MultiplierPipe } from './multiplier.pipe';
 import { ChildComponent } from './child/child.component';
 import { FileUploadComponent } from './file-upload/file-upload.component'
+import {MatButtonModule} from '@angular/material/button';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatMenuModule} from '@angular/material/menu'
+import {MatSidenavModule} from '@angular/material/sidenav'
+import {MatToolbarModule} from '@angular/material/toolbar'
+import {MatFormFieldModule} from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material/input'
 
 @NgModule({
   declarations: [
@@ -44,7 +51,9 @@ import { FileUploadComponent } from './file-upload/file-upload.component'
     BrowserAnimationsModule,
     HttpClientModule,
     CollapseModule.forRoot(), FormsModule, 
-    ReactiveFormsModule, NgxPaginationModule
+    ReactiveFormsModule, NgxPaginationModule,
+    MatButtonModule, MatCheckboxModule, MatMenuModule,  MatSidenavModule,
+    MatToolbarModule, MatFormFieldModule, MatInputModule
     
   ],
   providers:[ForbiddenNameValidatorDirective],

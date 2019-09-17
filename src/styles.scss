@@ -3,9 +3,7 @@
 //@import 'variables';
 @import '../node_modules/bootstrap/scss/bootstrap';
 
-.blueBold {
-    color: blue;
-    font-weight: bold;
-}
+@import '~@angular/material/prebuilt-themes/indigo-pink.css'
+  
     
 

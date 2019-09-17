@@ -1,3 +1,56 @@
+<!--
+<mat-toolbar>Expertzlab</mat-toolbar>
+
+<button mat-button [matMenuTriggerFor] = "menu">Menu</button>
+<mat-menu #menu = "matMenu">
+   <button mat-menu-item>
+      File
+   </button>
+   <button mat-menu-item>
+      Save As
+   </button>
+   <button mat-menu-item>
+    Open
+ </button>
+</mat-menu>
+<mat-sidenav-container class = "example-container">
+   <mat-sidenav #sidenav class = "example-sidenav">
+      Angular 6
+   </mat-sidenav>
+   <div class = "example-sidenav-content">
+      <button type = "button" mat-button  (click) = "sidenav.open()">
+         Open sidenav
+      </button>
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Favorite food" value="Sushi"> 
+        </mat-form-field>
+    
+        <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="Leave a comment"></textarea>
+        </mat-form-field>
+        <mat-checkbox>Check me!</mat-checkbox>
+        <div>
+            <button matButton >Click Me</button>
+        </div>
+        
+       
+
+        
+      </form>
+      
+
+      
+   </div>
+</mat-sidenav-container>
+
+<div>
+    <button (click) = "animate()">Click Me</button>
+    <div [@myanimation] = "state" class="happy">
+       <img src = "assets/images/happy.png" width = "100" height = "100">
+    </div>
+ </div>
+ -->
 
 <button type="button" class="btn btn-primary" (click)="isCollapsed = !isCollapsed"
     [attr.aria-expanded]="!isCollapsed" aria-controls="collapseBasic">Toggle collapse
@@ -35,7 +88,9 @@
     Side Bar
   </div>
   <div class="col-sm-9">
-          <router-outlet></router-outlet>
+          <router-outlet>
+              <img #spinnerElement *ngIf="loading" src="../assets/images/loader.gif" />
+          </router-outlet>
           Current Price {{cPrice | percent:'3.2-3'}}
   </div>
 </div>
